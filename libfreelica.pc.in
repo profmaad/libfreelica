@@ -1,0 +1,10 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libfreelica
+Description: libfreelica is an implementation of the FeliCa smartcard protocol in C++
+Version: 0.1.0
+Libs: -L${libdir} -lfreelica
+Cflags: -I${includedir}
