@@ -35,7 +35,7 @@ namespace FreeliCa
 		service_code_list = NULL;
 
 		number_of_blocks = abstract_block_list.size();
-		block_list = (uint16_t*)malloc(number_of_blocks);
+		block_list = (uint16_t*)malloc(2*number_of_blocks);
 		block_headers_list = (uint8_t*)malloc(number_of_blocks);
 		if(!block_list || !block_headers_list) { return; }
 
@@ -68,6 +68,7 @@ namespace FreeliCa
 			}
 
 			block_list[block_position] = block_list_element->block_number;
+			block_position++;
 		}
 
 		number_of_services = abstract_service_code_list.size();

@@ -138,7 +138,9 @@ namespace FreeliCa
 			{
 				for(int i = 0; i < read_without_encryption_response->getNumberOfBlocks(); i++)
 				{
-					memcpy((void*)(blocks+LIBFREELICA_FELICA_BLOCK_SIZE*i), (void*)read_without_encryption_response->getBlock(i), LIBFREELICA_FELICA_BLOCK_SIZE);
+					uint8_t *block = read_without_encryption_response->getBlock(i);
+					memcpy((void*)(blocks+LIBFREELICA_FELICA_BLOCK_SIZE*i), (void*)block, LIBFREELICA_FELICA_BLOCK_SIZE);
+					free(block);
 				}
 			}
 		}

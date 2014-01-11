@@ -79,12 +79,15 @@ int main(int argc, char **argv)
 		std::cerr << "\tLast Execution ID: " << execution_id << std::endl;
 		std::cerr << "\tUser Data: " << FreeliCa::bytes_to_hex(octopus_purse_block+8, 6) << std::endl;
 		std::cerr << "================================================" << std::endl;
+
+		free(octopus_purse_block);
 	}
 	else
 	{
 		std::cerr << "Failed to read octopus balance." << std::endl;
 	}
 
+	delete freelica_tag;
 	nfc_close(nfc_device);
 	nfc_exit(nfc_context);
 

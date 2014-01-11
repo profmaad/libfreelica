@@ -113,6 +113,7 @@ int main(int argc, char **argv)
 	delete request_response_command;
 	delete request_response_response;
 
+	delete freelica_tag;
 	nfc_close(nfc_device);
 	nfc_exit(nfc_context);
 
